@@ -5,6 +5,13 @@ from torch.utils.data import DataLoader
 from torch import nn
 import argparse
 
+import sys
+print(sys.version)
+sys.path.append("/home/kishor/GWM/Github_Repos/few-shot")
+print(sys.path)
+sys.path.append("/home/kishor/GWM/Github_Repos/few-shot/few_shot")
+
+import few_shot
 from few_shot.datasets import OmniglotDataset, MiniImageNet
 from few_shot.core import NShotTaskSampler, create_nshot_task_label, EvaluateFewShot
 from few_shot.maml import meta_gradient_step
@@ -40,6 +47,8 @@ parser.add_argument('--epoch-len', default=100, type=int)
 parser.add_argument('--eval-batches', default=20, type=int)
 
 args = parser.parse_args()
+
+print(args.dataset)
 
 if args.dataset == 'omniglot':
     dataset_class = OmniglotDataset

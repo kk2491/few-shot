@@ -15,6 +15,8 @@ import zipfile
 import shutil
 import os
 
+import sys
+sys.path.append("/home/kishor/GWM/Github_Repos/few-shot")
 from config import DATA_PATH
 from few_shot.utils import mkdir, rmdir
 
@@ -73,6 +75,7 @@ for root, _, files in os.walk(raw_omniglot_location):
 
 print('Processing background set...')
 for root, alphabets, _ in os.walk(prepared_omniglot_location + 'images_background/'):
+    print("Do I have anything here ?")
     for alphabet in sorted(alphabets):
         handle_alphabet(root + alphabet)
 

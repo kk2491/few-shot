@@ -3,7 +3,7 @@ import os
 
 PATH = os.path.dirname(os.path.realpath(__file__))
 
-DATA_PATH = None
+DATA_PATH = "/home/kishor/GWM/Github_Repos/few-shot/dataset/"
 
 EPSILON = 1e-8
 
